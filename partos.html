@@ -27,6 +27,15 @@
         background: #e9e9e9;
     }
 
+    header {
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
     .wrapper {
         width: 95%;
         margin: 10em auto;
@@ -52,7 +61,6 @@
         -webkit-box-sizing: border-box;
         box-shadow: 2px 2px 4px 0 #ccc;
     }
-
 
     @media only screen and (min-width: 400px) {
         .exhibit-collectionView-body {
@@ -95,23 +103,21 @@
 </head>
 
 <body>
-
-        <div>
-              <h1>Pictogramas partos</h1>
-        </div>
-        <div class="wrapper">
-            <div class="grid">
-            <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true" >
-
-                    <div data-ex-role="exhibit-lens" class="pictos-thumbnail" style="display: none;">
-                        <div class="item">
-                            <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" />
-                            <div><span data-ex-content=".label"></span></div>
-                        </div>
+    <header>
+        <h1>Pictogramas partos</h1>
+    </header>
+    <div class="wrapper">
+        <div class="grid">
+            <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true">
+                <div data-ex-role="exhibit-lens" class="pictos-thumbnail" style="display: none;">
+                    <div class="item">
+                        <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" />
+                        <div><span data-ex-content=".label"></span></div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
