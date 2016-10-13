@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pictogramas. Partos. HUMS</title>
+    <meta charset="UTF-8">
+    <link href="pictos.json" type="application/json" rel="exhibit-data" />
+    <script src="http://api.simile-widgets.org/exhibit/HEAD/exhibit-api.js"></script>
+    <script src="http://api.simile-widgets.org/exhibit/HEAD/lib/jquery.min.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+    <script type="text/javascript">
+    $(document).bind("exhibitConfigured.exhibit", function() {
+        $('.grid').masonry({
+            // options...
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    });
+    </script>
+    -->
+    <style>
+    body {
+        font: 1em/1.67 'Open Sans', Arial, Sans-serif;
+        margin: 0;
+        background: #e9e9e9;
+    }
+
+    .wrapper {
+        width: 95%;
+        margin: 10em auto;
+    }
+
+    .exhibit-collectionView-body {
+        margin: 1em 0;
+        padding: 0;
+        -moz-column-gap: 1em;
+        -webkit-column-gap: 1em;
+        column-gap: 1em;
+        font-size: .85em;
+    }
+
+    .item {
+        display: inline-block;
+        background: #fff;
+        padding: 1em;
+        margin: 0 0 1.5em;
+        width: 100%;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-shadow: 2px 2px 4px 0 #ccc;
+    }
+
+
+    @media only screen and (min-width: 400px) {
+        .exhibit-collectionView-body {
+            -moz-column-count: 4;
+            -webkit-column-count: 4;
+            column-count: 4;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        . {
+            -moz-column-count: 6;
+            -webkit-column-count: 6;
+            column-count: 6;
+        }
+    }
+
+    @media only screen and (min-width: 900px) {
+        .exhibit-collectionView-body {
+            -moz-column-count: 6;
+            -webkit-column-count: 6;
+            column-count: 6;
+        }
+    }
+
+    @media only screen and (min-width: 1100px) {
+        .exhibit-collectionView-body {
+            -moz-column-count: 8;
+            -webkit-column-count: 8;
+            column-count: 10;
+        }
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .wrapper {
+            width: 1260px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+        <div>
+              <h1>Pictogramas partos</h1>
+        </div>
+        <div class="wrapper">
+            <div class="grid">
+            <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true" >
+
+                    <div data-ex-role="exhibit-lens" class="pictos-thumbnail" style="display: none;">
+                        <div class="item">
+                            <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" />
+                            <div><span data-ex-content=".label"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
