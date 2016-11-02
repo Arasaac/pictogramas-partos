@@ -8,18 +8,7 @@
     <script src="//api.simile-widgets.org/exhibit/HEAD/exhibit-api.js"></script>
     <script src="//api.simile-widgets.org/exhibit/HEAD/lib/jquery.min.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--
-    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-    <script type="text/javascript">
-    $(document).bind("exhibitConfigured.exhibit", function() {
-        $('.grid').masonry({
-            // options...
-            itemSelector: '.grid-item',
-            columnWidth: 200
-        });
-    });
-    </script>
-    -->
+
     <style>
     body {
         font: 1em/1.67 'Open Sans', Arial, Sans-serif;
@@ -88,9 +77,9 @@
 
     @media only screen and (min-width: 1100px) {
         .exhibit-collectionView-body {
-            -moz-column-count: 8;
-            -webkit-column-count: 8;
-            column-count: 10;
+            -moz-column-count: 5;
+            -webkit-column-count: 5;
+            column-count: 5;
         }
     }
 
@@ -111,7 +100,9 @@
             <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true">
                 <div data-ex-role="exhibit-lens" class="pictos-thumbnail" style="display: none;">
                     <div class="item">
+                    <a data-ex-href-content="concat('pictos/', .ruta)">
                         <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" />
+                        </a>
                         <div><span data-ex-content=".label"></span></div>
                     </div>
                 </div>
