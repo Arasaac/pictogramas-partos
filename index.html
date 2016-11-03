@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -8,7 +9,7 @@
     <script src="//api.simile-widgets.org/exhibit/HEAD/exhibit-api.js?locale=sp"></script>
     <script src="//api.simile-widgets.org/exhibit/HEAD/lib/jquery.min.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.simile-widgets.org/styles/common.css" type="text/css" />
+    <link rel="stylesheet" href="//www.simile-widgets.org/styles/common.css" type="text/css" />
     <link rel='stylesheet' href='styles.css' type='text/css' />
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,44 +17,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    $(document).bind("exhibitConfigured.exhibit", function() {
+        $("input").addClass("form-control");
+    });
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <header>
-                <h1 class="col-sm-4">Pictogramas partos.</h1>
-                <div class="col-sm-2 pull-right" data-ex-facet-class="TextSearch" data-ex-facet-label="Buscar" data-ex-role="facet" id="search"></div>
-                <div data-ex-role="exhibit-facet" data-ex-expression=".tags" data-ex-facet-class="Cloud" data-ex-facet-label="Palabras" id="tag-facet" data-ex-show-missing="false" data-ex-height="100px"></div>
+                <div class="row">
+                    <h1 class="col-sm-4">Pictogramas partos.</h1>
+                    <div class="col-sm-2 pull-right" data-ex-facet-class="TextSearch" data-ex-facet-label="Buscar" data-ex-role="facet" id="search"></div>
+                </div>
+
             </header>
         </div>
         <div data-ex-role="lens" class="item" style="display: none;">
-            <table style="border-spacing:5">
-                <tr>
-                    <td style="position: relative">
-                        <div class="itemThumbnail-blocker"></div><img data-ex-src-content="concat('picto600/', .ruta)" class="img-responsive" /></td>
-                    <td>
-                        <h1><span data-ex-content=".label" ></span></h1>
-                    </td>
-                </tr>
-            </table>
+            <figure>
+            <img data-ex-src-content="concat('picto600/', .ruta)" />
+            <figcaption class="itemThumbnail-caption"><h2 data-ex-content=".label"></h2></figcaption>
+            </figure>
         </div>
         <div class="row">
+                    <button data-toggle="collapse" data-target="#tag-facet" class="pull-left btn btn-primary"><span class="   glyphicon glyphicon-collapse-down" id="boton"></span> Nube de palabras</button>
+                    <div data-ex-role="exhibit-facet" data-ex-expression=".tags" data-ex-facet-class="Cloud" id="tag-facet" data-ex-show-missing="false" class="collapse"></div>
+
             <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true" data-ex-orders=".label" data-ex-grouped="false" data-ex-paginate="true">
-                <table data-ex-role="lens" class="itemThumbnail" style="display: none;">
-                    <tr>
-                        <td style="vertial-align:bottom" class="itemThumbnail-thumbnailContainer">
-                            <div style="position: relative">
-                                <a data-ex-href-content="concat('picto600/', .ruta)">
-                                    <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" class="img-responsive img-thumbnail" />
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="itemThumbnail-caption"><strong data-ex-content="value"></strong></td>
-                    </tr>
-                </table>
+                <figure data-ex-role="lens" class="itemThumbnail" style="display: none;">
+                    <a data-ex-href-subcontent="#{{value}}">
+                        <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" class="img-responsive img-thumbnail" />
+                    </a>
+                    <figcaption class="itemThumbnail-caption"><strong data-ex-content="value"></strong></figcaption>
+                </figure>
             </div>
         </div>
         <footer>
