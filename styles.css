@@ -1,22 +1,12 @@
 body {
     font-family:    Trebuchet MS, Helvetica, Arial, sans serif;
     font-size:      10pt;
-    margin:         10px;
-    padding:        0;
 }
 table {
     font-size: 100%;
 }
 tr {
     vertical-align: top;
-}
-
-#header {
-    padding:    20px;
-}
-#body {
-    margin: 1em;
-    clear:  both;
 }
 
 .exhibit-thumbnailView-group h1 {
@@ -49,6 +39,13 @@ button.exhibit-copyButton {
     display:    none;
 }
 
+.exhibit-collectionView-header-sortControls {
+    display: none !important;
+}
+
+.exhibit-toolboxWidget-popup {
+     display: none !important;
+}
 table.itemThumbnail {
     margin:     0.5em;
     padding:    0.5em;
