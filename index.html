@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -17,12 +16,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-    $(document).bind("exhibitConfigured.exhibit", function() {
-        $("input").addClass("form-control");
-    });
-    </script>
 </head>
 
 <body>
@@ -33,22 +26,21 @@
                     <h1 class="col-sm-4">Pictogramas partos.</h1>
                     <div class="col-sm-2 pull-right" data-ex-facet-class="TextSearch" data-ex-facet-label="Buscar" data-ex-role="facet" id="search"></div>
                 </div>
-
             </header>
         </div>
         <div data-ex-role="lens" class="item" style="display: none;">
             <figure>
-            <img data-ex-src-content="concat('picto600/', .ruta)" />
-            <figcaption class="itemThumbnail-caption"><h2 data-ex-content=".label"></h2></figcaption>
+                <img data-ex-src-content="concat('picto600/', .ruta)" />
+                <figcaption class="itemThumbnail-caption">
+                    <h2 data-ex-content=".label"></h2></figcaption>
             </figure>
         </div>
         <div class="row">
-                    <button data-toggle="collapse" data-target="#tag-facet" class="pull-left btn btn-primary"><span class="   glyphicon glyphicon-collapse-down" id="boton"></span> Nube de palabras</button>
-                    <div data-ex-role="exhibit-facet" data-ex-expression=".tags" data-ex-facet-class="Cloud" id="tag-facet" data-ex-show-missing="false" class="collapse"></div>
-
+            <button data-toggle="collapse" data-target="#tag-facet" class="pull-left btn btn-primary"><span class="   glyphicon glyphicon-collapse-down" id="boton"></span> Nube de palabras</button>
+            <div data-ex-role="exhibit-facet" data-ex-expression=".tags" data-ex-facet-class="Cloud" id="tag-facet" data-ex-show-missing="false" class="collapse"></div>
             <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true" data-ex-orders=".label" data-ex-grouped="false" data-ex-paginate="true">
                 <figure data-ex-role="lens" class="itemThumbnail" style="display: none;">
-                        <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" class="img-responsive img-thumbnail" />
+                    <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" class="img-responsive img-thumbnail" />
                     <figcaption class="itemThumbnail-caption"><strong data-ex-content="value"></strong></figcaption>
                 </figure>
             </div>
@@ -58,6 +50,11 @@
         </footer>
     </div>
     </div>
+     <script type="text/javascript">
+    $(document).bind("dataload.exhibit", function() {
+        $("input").addClass("form-control");
+    });
+    </script>
 </body>
 
 </html>
