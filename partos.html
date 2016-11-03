@@ -1,113 +1,63 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="es">
 
 <head>
     <title>Pictogramas. Partos. HUMS</title>
     <meta charset="UTF-8">
     <link href="pictos.json" type="application/json" rel="exhibit-data" />
-    <script src="//api.simile-widgets.org/exhibit/HEAD/exhibit-api.js"></script>
+    <script src="//api.simile-widgets.org/exhibit/HEAD/exhibit-api.js?locale=sp"></script>
     <script src="//api.simile-widgets.org/exhibit/HEAD/lib/jquery.min.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.simile-widgets.org/styles/common.css" type="text/css" />
+    <link rel='stylesheet' href='styles.css' type='text/css' />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <style>
-    body {
-        font: 1em/1.67 'Open Sans', Arial, Sans-serif;
-        margin: 0;
-        background: #e9e9e9;
-    }
-
-    header {
-        text-align: center;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .wrapper {
-        width: 95%;
-        margin: 0em auto;
-    }
-
-    .exhibit-collectionView-body {
-        margin: 1em 0;
-        padding: 0;
-        -moz-column-gap: 1em;
-        -webkit-column-gap: 1em;
-        column-gap: 1em;
-        font-size: .85em;
-    }
-
-    .item {
-        display: inline-block;
-        background: #fff;
-        padding: 1em;
-        margin: 0 0 1.5em;
-        width: 100%;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-shadow: 2px 2px 4px 0 #ccc;
-    }
-
-    @media only screen and (min-width: 400px) {
-        .exhibit-collectionView-body {
-            -moz-column-count: 4;
-            -webkit-column-count: 4;
-            column-count: 4;
-        }
-    }
-
-    @media only screen and (min-width: 700px) {
-        . {
-            -moz-column-count: 6;
-            -webkit-column-count: 6;
-            column-count: 6;
-        }
-    }
-
-    @media only screen and (min-width: 900px) {
-        .exhibit-collectionView-body {
-            -moz-column-count: 6;
-            -webkit-column-count: 6;
-            column-count: 6;
-        }
-    }
-
-    @media only screen and (min-width: 1100px) {
-        .exhibit-collectionView-body {
-            -moz-column-count: 5;
-            -webkit-column-count: 5;
-            column-count: 5;
-        }
-    }
-
-    @media only screen and (min-width: 1280px) {
-        .wrapper {
-            width: 1260px;
-        }
-    }
-    </style>
+    <script type="text/javascript">
+    $(document).bind("exhibitConfigured.exhibit", function() {
+        $("input").addClass("form-control");
+    });
+    </script>
 </head>
 
 <body>
-    <header>
-        <h1>Pictogramas partos</h1>
-    </header>
-    <div class="wrapper">
-        <div class="grid">
-            <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true">
-                <div data-ex-role="exhibit-lens" class="pictos-thumbnail" style="display: none;">
-                    <div class="item">
-                    <a data-ex-href-content="concat('pictos/', .ruta)">
-                        <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" />
-                        </a>
-                        <div><span data-ex-content=".label"></span></div>
-                    </div>
+    <div class="container">
+        <div class="row">
+            <header>
+                <div class="row">
+                    <h1 class="col-sm-4">Pictogramas partos.</h1>
+                    <div class="col-sm-2 pull-right" data-ex-facet-class="TextSearch" data-ex-facet-label="Buscar" data-ex-role="facet" id="search"></div>
                 </div>
+
+            </header>
+        </div>
+        <div data-ex-role="lens" class="item" style="display: none;">
+            <figure>
+            <img data-ex-src-content="concat('picto600/', .ruta)" />
+            <figcaption class="itemThumbnail-caption"><h2 data-ex-content=".label"></h2></figcaption>
+            </figure>
+        </div>
+        <div class="row">
+                    <button data-toggle="collapse" data-target="#tag-facet" class="pull-left btn btn-primary"><span class="   glyphicon glyphicon-collapse-down" id="boton"></span> Nube de palabras</button>
+                    <div data-ex-role="exhibit-facet" data-ex-expression=".tags" data-ex-facet-class="Cloud" id="tag-facet" data-ex-show-missing="false" class="collapse"></div>
+
+            <div data-ex-role="view" data-ex-label="Listado" data-ex-view-class="Thumbnail" data-ex-show-all="true" data-ex-orders=".label" data-ex-grouped="false" data-ex-paginate="true">
+                <figure data-ex-role="lens" class="itemThumbnail" style="display: none;">
+                    <a data-ex-href-subcontent="#{{value}}">
+                        <img data-ex-src-content="concat('pictothumb/', .ruta)" data-ex-alt-content=".label" data-ex-title-content=".label" class="img-responsive img-thumbnail" />
+                    </a>
+                    <figcaption class="itemThumbnail-caption"><strong data-ex-content="value"></strong></figcaption>
+                </figure>
             </div>
         </div>
+        <footer>
+            <p>(c) Matronas y auxiliares H.U.M.S. con la colaboración de ARASAAC. 2016</p>
+        </footer>
     </div>
     </div>
 </body>

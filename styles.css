@@ -24,20 +24,14 @@ tr {
     background: #E6E5FE;
 }
 
-.item h1 {
-    font-size:      120%;
-    margin:         1em 0;
-    color:          #7D2E1C;
-}
-.item h2 {
-    font-size:      100%;
-    font-weight:    bold;
-    margin:         0.5em 0;
-}
-
 button.exhibit-copyButton {
     display:    none;
 }
+
+.exhibit-cloudFacet-header-title {
+    display:    none;
+}
+
 
 .exhibit-collectionView-header-sortControls {
     display: none !important;
@@ -46,25 +40,25 @@ button.exhibit-copyButton {
 .exhibit-toolboxWidget-popup {
      display: none !important;
 }
-table.itemThumbnail {
-    margin:     0.5em;
-    padding:    0.5em;
-    width:      120px;
+
+figure {
+   background-color: #f8f8f8;
+   padding: 5px;
+   font-size: .875em;
+   display: table;
 }
-td.itemThumbnail-thumbnailContainer {
-    overflow:   hidden;
-    height:     108px;
+
+figure img {
+    display: block;
+    width: 100%;
+}
+
+figcaption {
+    display: table-caption;
+    caption-side: bottom;
+    background: #f8f8f8;
+    padding: 0 10px 10px;
     text-align: center;
 }
-td.itemThumbnail-caption {
-    height:     4em;
-    text-align: center;
-}
-div.itemThumbnail-blocker {
-    position:   absolute;
-    width:      100%;
-    height:     100%;
-    top:        0px;
-    left:       0px;
-    z-index:    1000;
-}
+
+
