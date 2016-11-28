@@ -48,7 +48,7 @@ figure {
    display: table;
 }
 
-figure img {
+figures img {
     display: block;
     width: 100%;
 }
